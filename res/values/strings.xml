@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Budge</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="user">Username</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
+    <string name="auth_error">Authentication error</string>
+    <string name="new_expense">New expense</string>
+    <string name="new_account">New account</string>
+    <string name="my_accounts">My accounts</string>
+    <string name="config">Settings</string>
+    <string name="account_name">Acc Name:</string>
+    <string name="account_value">Acc value:</string>
+    <string name="accept_button">Accept</string>
+    <string name="reset_button">Reset</string>
+    <string name="expense_type">Type</string>
+    <string name="value">Value</string>
+    <string name="expense_description">Description</string>
+    <string-array name="expense_types">
+        <item>Food</item>
+        <item>Cleaning</item>
+        <item>Clothes</item>
+        <item>Transport</item>
+        <item>Others</item>
+    </string-array>
+    <string name="default_amount">0</string>
+    <string name="default_name">N/A</string>
+    <string name="register">Register</string>
+    <string name="money_total">Money Total:</string>
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+
+</resources>
