@@ -50,15 +50,15 @@
 		        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 		    <TextView
-		        android:id="@+id/config"
+		        android:id="@+id/my_expenses"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_alignRight="@+id/new_account"
 		        android:layout_alignTop="@+id/my_accounts"
 		        android:clickable="true"
-		        android:drawableTop="@drawable/config"
+		        android:drawableTop="@drawable/my_expenses"
 		        android:onClick="selectOption"
-		        android:text="@string/config"
+		        android:text="@string/my_expenses"
 		        android:textStyle="bold" />
 
 		    <TextView

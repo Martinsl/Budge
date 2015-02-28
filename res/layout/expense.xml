@@ -1,182 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView 
-    xmlns:android="http://schemas.android.com/apk/res/android" 
-    android:layout_width="match_parent" 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
 
-    <LinearLayout
-        android:layout_width="match_parent" 
-        android:layout_height="wrap_content" 
-        android:orientation="vertical" >
-		
-		<LinearLayout 
-		    android:layout_width="match_parent" 
-		    android:layout_height="wrap_content"
-		    android:orientation="vertical" >
-		    
-			<TextView 
-			    android:layout_width="wrap_content" 
-			    android:layout_height="wrap_content" 
-			    android:layout_gravity="center" 
-			    android:text="@string/new_expense" 
-			    android:textAppearance= "?android:attr/textAppearanceLarge" 
-			    android:textStyle="bold" />
-			
-		</LinearLayout> 
-		
-		<Space
-  				android:layout_width="1dp"
-  				android:layout_height="10dp"/>
-		
-		<TableLayout
-		    android:layout_width="match_parent"
-		    android:layout_height="442dp"
-		    android:stretchColumns="0,1" >
-			
-			<TableRow>
-			    
-				<TextView 
-				    android:text="@string/expense_type"
-				    android:layout_gravity="center"
-				    android:textStyle="bold"  />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="@string/new_expense" 
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-			</TableRow>
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/expenseSpinner"
+        android:layout_marginTop="19dp"
+        android:layout_toStartOf="@+id/textView1"
+        android:text="@string/expense_type"
+        android:textStyle="bold" />
 
-			<TableRow
-			    android:id="@+id/tableRow1"
-			    android:layout_width="wrap_content"
-			    android:layout_height="34dp" >
-				
-			    <Spinner
-			        android:id="@+id/expenseSpinner"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:entries="@array/expense_types"
-			        android:prompt="@string/expense_type" />
-				
-			</TableRow>
-			
-			<Space
-  				android:layout_width="1dp"
-  				android:layout_height="10dp"/>
-			
-			<TableRow>
-				<TextView 
-				    android:layout_width="wrap_content" 
-				    android:layout_height="wrap_content" 
-				    android:layout_gravity="center" 
-				    android:text="@string/value"
-				    android:textStyle="bold" /> 
+    <EditText
+        android:id="@+id/expenseValue"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/expenseSpinner"
+        android:ems="10"
+        android:inputType="numberDecimal" />
 
-			</TableRow>
+    <EditText
+        android:id="@+id/expenseDescription"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignStart="@+id/accountSpinner"
+        android:ems="10"
+        android:inputType="text" >
 
-			<EditText
-			    android:id="@+id/expenseValue"
-			    android:layout_width="match_parent"
-			    android:layout_height="wrap_content"
-			    android:ems="10"
-			    android:inputType="numberDecimal" />
-			
-			<TableRow>
- 
-			</TableRow>
-			
-			<Space
-  				android:layout_width="1dp"
-  				android:layout_height="10dp"/>
-			
-			<TableRow>
-				<TextView 
-				    android:layout_width="wrap_content" 
-				    android:layout_height="wrap_content" 
-				    android:layout_gravity="center" 
-				    android:text="@string/account_name"
-				    android:textStyle="bold" /> 
- 
-			</TableRow>
-			
-			<TableRow>
+    </EditText>
 
-				<Spinner
-				    android:id="@+id/accountSpinner"
-				    android:layout_width="match_parent"
-				    android:layout_height="wrap_content"
-				    android:prompt="@string/account_name" />
-				
-			</TableRow>
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:onClick="createExpense"
+        android:text="@string/accept_button" />
 
-			<Space
-  				android:layout_width="1dp"
-  				android:layout_height="10dp"/>
-			
-			<TableRow
-			    android:id="@+id/tableRow3"
-			    android:layout_width="match_parent"
-			    android:layout_height="wrap_content" >
+    <RadioGroup
+        android:id="@+id/incomeExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button1"
+        android:layout_alignTop="@+id/textView1" >
 
-				<TextView
-				    android:id="@+id/textView1"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:layout_gravity="center"
-				    android:text="@string/expense_description"
-				    android:textStyle="bold" />
-
-			</TableRow>
-
-			<TableRow
-			    android:id="@+id/tableRow4"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content" >
-
-				<EditText
-				    android:id="@+id/expenseDescription"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:inputType="text" />
-
-			</TableRow>
-
-			<TableRow
-			    android:id="@+id/tableRow2"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content" >
-
-			</TableRow>
-
-		<RadioGroup
-            android:id="@+id/incomeExpense"
+        <RadioButton
+            android:id="@+id/negative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="26dp" >
+            android:layout_marginTop="31dp"
+            android:checked="true"
+            android:text="@string/expense" />
 
-            <RadioButton
-                android:id="@+id/negative"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/expense" />
+        <RadioButton
+            android:id="@+id/positive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/income" />
+    </RadioGroup>
 
-            <RadioButton
-                android:id="@+id/positive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/income" />
+    <Spinner
+        android:id="@+id/expenseSpinner"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/incomeExpense"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/expense_types"
+        android:prompt="@string/expense_type" />
 
-        </RadioGroup>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/accountSpinner"
+        android:layout_marginBottom="23dp"
+        android:layout_toStartOf="@+id/textView1"
+        android:text="@string/account_name"
+        android:textStyle="bold" />
 
-			<Button
-			    android:id="@+id/button1"
-			    android:layout_width="23dp"
-			    android:layout_height="wrap_content"
-			    android:layout_marginTop="50dp"
-			    android:onClick="createExpense"
-			    android:text="@string/accept_button" />
- 
-		</TableLayout>
-		
-	</LinearLayout> 
-	
-</ScrollView>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="18dp"
+        android:text="@string/expense_description"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/accountSpinner"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/expenseSpinner"
+        android:layout_below="@+id/expenseValue"
+        android:layout_marginTop="14dp"
+        android:prompt="@string/account_name" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/TextView01"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/textView1"
+        android:text="@string/value"
+        android:textStyle="bold" />
+    
+</RelativeLayout>
